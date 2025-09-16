@@ -10,13 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  plugin_platform_interface: ^2.0.2
   ffi: ^2.1.4
 
 dev_dependencies:
   ffigen: ^13.0.0
-  flutter_test:
-    sdk: flutter
   flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
@@ -79,3 +76,8 @@ flutter:
   #
   # For details regarding fonts in packages, see
   # https://flutter.dev/to/font-from-package
+
+topics:
+  - jpeg
+  - ffi
+  - encode
