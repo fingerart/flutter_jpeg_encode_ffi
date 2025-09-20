@@ -4,7 +4,7 @@ description: |
   Bindings for `src/jpeg_encode_ffi.h`.
 
   Regenerate bindings with `dart run ffigen --config ffigen.yaml`.
-output: 'lib/jpeg_encode_ffi_bindings_generated.dart'
+output: 'lib/src/jpeg_encode_ffi_bindings_generated.dart'
 headers:
   entry-points:
     - 'src/jpeg_encode_ffi.h'

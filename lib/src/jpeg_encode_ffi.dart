@@ -8,11 +8,11 @@ import 'dart:ui' as ui;
 import 'package:ffi/ffi.dart';
 import 'package:jpeg_encode_ffi/src/jpeg_encode_ffi_bindings_generated.dart';
 
-/// 以Jpeg格式编码图像[image]到文件[path]
+/// Encodes the image [image] to a file at [path] in JPEG format.
 ///
-/// [pixels] 图像字节数组
-/// [comp] 图像通道数量
-/// [path] 保存路径
+/// [pixels] Image byte array
+/// [comp] Number of image channels
+/// [path] Save path
 Future<void> encodeJpegImageToFile(
   ui.Image image,
   String output, {
@@ -33,13 +33,13 @@ Future<void> encodeJpegImageToFile(
   );
 }
 
-/// 以Jpeg格式编码图像[pixels]到文件[path]
+/// Encodes the image [pixels] to a file at [path] in JPEG format
 ///
-/// [pixels] 图像字节数组
-/// [width] 图像的宽度
-/// [height] 图像的高度
-/// [comp] 图像通道数量（仅支持1、3、4）
-/// [path] 保存路径
+/// [pixels] Image byte array
+/// [width] Image width
+/// [height] Image height
+/// [comp] Number of image channels (only 1, 3, 4 are supported)
+/// [path] Save path
 Future<void> encodeJpegToFile(
   Uint8List pixels,
   int width,
@@ -98,7 +98,7 @@ mixin _Freeable {
   void free();
 }
 
-/// 编码请求
+/// Encodes the request.
 class _EncodeRequest with _Freeable {
   _EncodeRequest(
     this.id,
@@ -152,7 +152,7 @@ class _EncodeRequest with _Freeable {
   }
 }
 
-/// 编码响应
+/// Encodes the response
 class _EncodeResponse {
   final int id;
   final int result;

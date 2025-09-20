@@ -1,7 +1,8 @@
 name: jpeg_encode_ffi
 description: "Encode images into Jpeg format through native FFI binding."
-version: 0.0.1
-homepage:
+version: 0.0.1+1
+homepage: https://github.com/fingerart/flutter_jpeg_encode_ffi
+issue_tracker: https://github.com/fingerart/flutter_jpeg_encode_ffi/issues
 
 environment:
   sdk: '>=3.4.4 <4.0.0'
@@ -81,3 +82,7 @@ topics:
   - jpeg
   - ffi
   - encode
+
+screenshots:
+  - description: 'jpeg encode example'
+    path: doc/example.jpg

@@ -15,16 +15,17 @@ import 'dart:ffi' as ffi;
 class JpegEncodeFfiBindings {
   /// Holds the symbol lookup function.
   final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
-  _lookup;
+      _lookup;
 
   /// The symbols are looked up in [dynamicLibrary].
   JpegEncodeFfiBindings(ffi.DynamicLibrary dynamicLibrary)
-    : _lookup = dynamicLibrary.lookup;
+      : _lookup = dynamicLibrary.lookup;
 
   /// The symbols are looked up with [lookup].
   JpegEncodeFfiBindings.fromLookup(
-    ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName) lookup,
-  ) : _lookup = lookup;
+      ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
+          lookup)
+      : _lookup = lookup;
 
   /// Returns false on failure
   int jo_write_jpg(
@@ -35,31 +36,21 @@ class JpegEncodeFfiBindings {
     int comp,
     int quality,
   ) {
-    return _jo_write_jpg(filename, data, width, height, comp, quality);
+    return _jo_write_jpg(
+      filename,
+      data,
+      width,
+      height,
+      comp,
+      quality,
+    );
   }
 
   late final _jo_write_jpgPtr = _lookup<
-    ffi.NativeFunction<
-      ffi.Int Function(
-        ffi.Pointer<ffi.Char>,
-        ffi.Pointer<ffi.Char>,
-        ffi.Int,
-        ffi.Int,
-        ffi.Int,
-        ffi.Int,
-      )
-    >
-  >('jo_write_jpg');
-  late final _jo_write_jpg =
-      _jo_write_jpgPtr
-          .asFunction<
-            int Function(
-              ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>,
-              int,
-              int,
-              int,
-              int,
-            )
-          >();
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+              ffi.Int, ffi.Int, ffi.Int, ffi.Int)>>('jo_write_jpg');
+  late final _jo_write_jpg = _jo_write_jpgPtr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int, int, int, int)>();
 }
