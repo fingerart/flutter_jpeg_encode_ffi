@@ -15,7 +15,7 @@ Encode images into Jpeg format through native FFI binding.
 
 ```yaml
 dependencies:
-  jpeg_encode_ffi: ^0.0.1+1
+  jpeg_encode_ffi: ^0.0.1+2
 ```
 
 ```dart
